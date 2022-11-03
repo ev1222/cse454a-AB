@@ -1,15 +1,14 @@
 from Product import Product
+from Grits import Grits
 from Customer import Customer
 from Supplier import Supplier
 from Lane import Lane
 
-grits = Product("grits",0.5,1)
+grits = Grits()
 
-crete_supply = [grits] * 8000
-crete = Supplier("crete", "n/a", crete_supply, 15.28)
+crete = Supplier("crete", grits, 15.28, 8000)
 
-z1bv_demand = [grits] * 20000
-z1bv = Customer("01bv","n/a",z1bv_demand)
+z1bv = Customer("01bv", grits, 20000)
 
 lane1 = Lane(crete, z1bv)
-#print(lane1.get_gross_shipping_cost())
+print(lane1.getGrossShippingCost())
