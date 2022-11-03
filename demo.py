@@ -7,8 +7,11 @@ from Lane import Lane
 grits = Grits()
 
 crete = Supplier("crete", grits, 15.28, 8000)
+danville = Supplier("danville", grits, 15.61, 134400)
 
 z1bv = Customer("01bv", grits, 20000)
 
-lane1 = Lane(crete, z1bv)
+lane1 = Lane(z1bv)
+lane1.addSupplier(crete)
+lane1.addSupplier(danville)
 print(lane1.getGrossShippingCost())
