@@ -4,14 +4,14 @@ from Supplier import Supplier
 
 #TODO: if need be, implement more granular calculations of transport cost
 class Lane(): 
-    def __init__(self, customer):
+    def __init__(self, customer: Customer):
         self.customer = customer
-        self.transport_cost = dict()# per 100 lbs
+        self.transport_cost = dict() # per 100 lbs
         self.suppliers: List[Supplier] = []
 
     def addSupplier(self, supplier: Supplier):
         self.suppliers.append(supplier)
-        self.transport_cost[supplier.name]=supplier.prod_cost
+        self.transport_cost[supplier.name]=6.95 # hardcoded value for testing/demo purposes
 
     def removeSupplier(self, supplier: Supplier):
         self.suppliers.remove(supplier)
