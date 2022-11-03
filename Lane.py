@@ -22,10 +22,14 @@ class Lane():
             gross_shipping_cost += total_prod_weight/100 * self.transport_cost[supplier.name]
         return gross_shipping_cost
 
-    def getGrossProductionCost(self):
+    def getGrossProductionCost(self) -> float:
         gross_production_cost = 0
         for supplier in self.suppliers:
-            gross_production_cost += supplier.total_prod_cost()
+            gross_production_cost += supplier.total_prod_cost
+        return gross_production_cost
+    
+    def getLaneCost(self) -> float:
+        return self.getGrossProductionCost() + self.getGrossShippingCost()
 
     def isValid(self):
         pass

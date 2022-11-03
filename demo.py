@@ -14,4 +14,6 @@ z1bv = Customer("01bv", grits, 20000)
 lane1 = Lane(z1bv)
 lane1.addSupplier(crete)
 lane1.addSupplier(danville)
-print(lane1.getGrossShippingCost())
+
+print("Total cost of supply chain:")
+print(f'${round(lane1.getLaneCost(),2):,}')
