@@ -1,19 +1,21 @@
-from dataclasses import dataclass, field
 from typing import List
 from Customer import Customer
 from Supplier import Supplier
 
 #TODO: if need be, implement more granular calculations of transport cost
-@dataclass
 class Lane(): 
-    customer: Customer
-
-    def __post_init__(self):
-        self.transport_cost: dict[Supplier, float] = {"crete":6.95, "danville":4.96} # per 100 lbs
+    def __init__(self, customer):
+        self.customer = customer
+        self.transport_cost = dict()# per 100 lbs
         self.suppliers: List[Supplier] = []
 
-    def addSupplier(self,supplier):
+    def addSupplier(self, supplier: Supplier):
         self.suppliers.append(supplier)
+        self.transport_cost[supplier.name]=supplier.prod_cost
+
+    def removeSupplier(self, supplier: Supplier):
+        self.suppliers.remove(supplier)
+        self.transport_cost.pop(supplier.name)
 
     def getGrossShippingCost(self) -> float:
         gross_shipping_cost = 0
@@ -31,5 +33,5 @@ class Lane():
     def getLaneCost(self) -> float:
         return self.getGrossProductionCost() + self.getGrossShippingCost()
 
-    def isValid(self):
+    def isValid(self) -> bool:
         pass
