@@ -14,18 +14,19 @@ dmilling = Supplier("Didion Milling", grits, 14.29, 67304)
 z1bv = Customer("01bv", grits, 20000)
 z1cv = Customer("01cv", grits, 34000)
 
-lane1 = Lane(z1bv)
+lane1 = Lane("lane1",z1bv)
 lane1.addSupplier(crete)
 lane1.addSupplier(danville)
 
-lane2 = Lane(z1cv)
-lane2.addSupplier(dmilling)
-lane2.addSupplier(crete)
+lane2 = Lane("lane2",z1cv)
+#lane2.addSupplier(dmilling)
+#lane2.addSupplier(crete)
 
 sc = SupplyChain("sc1")
 sc.addLane(lane1)
 sc.addLane(lane2)
 
-
+if not sc.isValid():
+    print("Uh oh!")
 print("Total cost of supply chain:")
 print(f'${round(sc.grossCost(),2):,}')

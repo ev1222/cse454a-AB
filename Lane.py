@@ -4,7 +4,8 @@ from Supplier import Supplier
 
 #TODO: if need be, implement more granular calculations of transport cost
 class Lane(): 
-    def __init__(self, customer: Customer):
+    def __init__(self, name, customer: Customer):
+        self.name = name
         self.customer = customer
         self.transport_cost = dict() # per 100 lbs
         self.suppliers: List[Supplier] = []
@@ -33,5 +34,12 @@ class Lane():
     def getLaneCost(self) -> float:
         return self.getGrossProductionCost() + self.getGrossShippingCost()
 
+    #TODO: add checks for other constraints 
     def isValid(self) -> bool:
-        pass
+        total_capacity = 0
+        for supplier in self.suppliers:
+            total_capacity += supplier.capacity
+        if total_capacity < self.customer.demand:
+            return False
+        else:
+            return True
