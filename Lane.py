@@ -36,6 +36,8 @@ class Lane():
 
     #TODO: add checks for other constraints 
     def isValid(self) -> bool:
+        # may want to abstract this out to helper method 
+        # (e.g. "checkCapacity") as we add further constraints
         total_capacity = 0
         for supplier in self.suppliers:
             total_capacity += supplier.capacity
