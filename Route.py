@@ -1,10 +1,12 @@
 from Lane import Lane
+from Customer import Customer
 from typing import List
 
-class SupplyChain():
-    def __init__(self, name):
+class Route():
+    def __init__(self, name, customer: Customer):
         self.name = name
         self.lanes: List[Lane] = []
+        self.customer = customer
 
     def addLane(self, lane):
         self.lanes.append(lane)
@@ -20,9 +22,10 @@ class SupplyChain():
 
     #TODO: add addt'l checks for other constraints
     def isValid(self) -> bool:
-        flag = True
+        capacity = 0
         for lane in self.lanes:
-            if not lane.isValid():
-                flag = False
-                print(f'{lane.name} is not valid') # for debugging purposes
-        return flag
+            capacity += lane.supplier.capacity
+        if capacity < self.customer.demand:
+            print(f'{self.name} is not valid') # for debugging purposes
+            return False
+        return True

@@ -3,7 +3,7 @@ from Grits import Grits
 from Customer import Customer
 from Supplier import Supplier
 from Lane import Lane
-from SupplyChain import SupplyChain
+from Route import Route
 
 grits = Grits()
 
@@ -19,11 +19,11 @@ lane1 = Lane("lane1",z1bv)
 lane2 = Lane("lane2",z1cv)
 
 
-sc = SupplyChain("sc1")
+sc = Route("sc1")
 sc.addLane(lane1)
 sc.addLane(lane2)
 
 if not sc.isValid():
     print("Uh oh!")
 print("Total cost of supply chain:")
-print(f'${round(sc.grossCost(),2):,}')
+print(f'${round(sc.grossCost(),2):,}') # print output in rounded dollar format
