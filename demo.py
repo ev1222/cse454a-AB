@@ -15,12 +15,9 @@ z1bv = Customer("01bv", grits, 20000)
 z1cv = Customer("01cv", grits, 34000)
 
 lane1 = Lane("lane1",z1bv)
-lane1.addSupplier(crete)
-lane1.addSupplier(danville)
 
 lane2 = Lane("lane2",z1cv)
-#lane2.addSupplier(dmilling)
-#lane2.addSupplier(crete)
+
 
 sc = SupplyChain("sc1")
 sc.addLane(lane1)

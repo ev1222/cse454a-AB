@@ -4,44 +4,22 @@ from Supplier import Supplier
 
 #TODO: if need be, implement more granular calculations of transport cost
 class Lane(): 
-    def __init__(self, name, customer: Customer):
+    def __init__(self, name, customer: Customer, supplier: Supplier):
         self.name = name
         self.customer = customer
-        self.transport_cost = dict() # per 100 lbs
-        self.suppliers: List[Supplier] = []
-
-    def addSupplier(self, supplier: Supplier):
-        self.suppliers.append(supplier)
-        self.transport_cost[supplier.name]=6.95 # hardcoded value for testing/demo purposes
-
-    def removeSupplier(self, supplier: Supplier):
-        self.suppliers.remove(supplier)
-        self.transport_cost.pop(supplier.name)
+        self.supplier = supplier
+        self.transport_cost = 6.5 # per 100 lbs, hardcoded for now
 
     def getGrossShippingCost(self) -> float:
         gross_shipping_cost = 0
-        for supplier in self.suppliers:
-            total_prod_weight = supplier.capacity * supplier.product.weight
-            gross_shipping_cost += total_prod_weight/100 * self.transport_cost[supplier.name]
+        total_prod_weight = self.supplier.capacity * self.supplier.product.weight
+        gross_shipping_cost += total_prod_weight/100 * self.transport_cost
         return gross_shipping_cost
 
     def getGrossProductionCost(self) -> float:
         gross_production_cost = 0
-        for supplier in self.suppliers:
-            gross_production_cost += supplier.total_prod_cost
+        gross_production_cost += self.supplier.total_prod_cost
         return gross_production_cost
     
     def getLaneCost(self) -> float:
         return self.getGrossProductionCost() + self.getGrossShippingCost()
-
-    #TODO: add checks for other constraints 
-    def isValid(self) -> bool:
-        # may want to abstract this out to helper method 
-        # (e.g. "checkCapacity") as we add further constraints
-        total_capacity = 0
-        for supplier in self.suppliers:
-            total_capacity += supplier.capacity
-        if total_capacity < self.customer.demand:
-            return False
-        else:
-            return True
