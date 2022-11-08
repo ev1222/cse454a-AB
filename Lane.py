@@ -10,14 +10,12 @@ class Lane():
         self.transport_cost = 6.5 # per 100 lbs, hardcoded for now
 
     def getGrossShippingCost(self) -> float:
-        gross_shipping_cost = 0
         total_prod_weight = self.supplier.capacity * self.supplier.product.weight
-        gross_shipping_cost += total_prod_weight/100 * self.transport_cost
+        gross_shipping_cost = total_prod_weight/100 * self.transport_cost
         return gross_shipping_cost
 
     def getGrossProductionCost(self) -> float:
-        gross_production_cost = 0
-        gross_production_cost += self.supplier.total_prod_cost
+        gross_production_cost = self.supplier.total_prod_cost
         return gross_production_cost
     
     def getLaneCost(self) -> float:

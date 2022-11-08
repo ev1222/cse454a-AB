@@ -2,7 +2,7 @@ from Lane import Lane
 from Customer import Customer
 from typing import List
 
-class Route():
+class SupplyChain():
     def __init__(self, name, customer: Customer):
         self.name = name
         self.lanes: List[Lane] = []
