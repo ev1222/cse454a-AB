@@ -7,7 +7,7 @@ class SupplyChain():
     def __init__(self, name):
         self.name = name
         self.lanes: List[Lane] = []
-        self.customers: Set[Customer] = []
+        self.customers: Set[Customer] = [] # set because no repeats
         self.suppliers: Set[Supplier] = []
 
     def addLane(self, lane):
