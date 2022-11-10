@@ -3,11 +3,11 @@ from Supplier import Supplier
 
 #TODO: if need be, implement more granular calculations of transport cost
 class Lane(): 
-    def __init__(self, name, customer: Customer, supplier: Supplier):
+    def __init__(self, name, customer: Customer, supplier: Supplier, transport_cost):
         self.name = name
         self.customer = customer
         self.supplier = supplier
-        self.transport_cost = 6.5 # per 100 lbs, hardcoded for now
+        self.transport_cost = transport_cost # per 100 lbs, hardcoded for now
 
     def getGrossShippingCost(self) -> float:
         total_prod_weight = self.supplier.capacity * self.supplier.product.weight
