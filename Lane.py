@@ -1,7 +1,8 @@
 from Customer import Customer
 from Supplier import Supplier
 
-#TODO: if need be, implement more granular calculations of transport cost
+#TODO: Lanes need product field 
+
 class Lane(): 
     def __init__(self, name, customer: Customer, supplier: Supplier, transport_cost):
         self.name = name
