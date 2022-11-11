@@ -2,6 +2,9 @@ from dataclasses import dataclass, field
 from Product import Product
 from typing import List
 
+#TODO: Suppliers can be supplying multiple products. 
+# Need to implement this and update the rest of objects to match. 
+
 @dataclass
 class Supplier():
     name: str

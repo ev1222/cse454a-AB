@@ -1,4 +1,5 @@
 # data shapes
-# supplier: name, product, product cost, capacity
-# customer: name, product, demand
+# supplier: name, products, product cost, capacity
+# customer: name, products, demand
 # lane: name, customer, supplier, transport cost 
+
