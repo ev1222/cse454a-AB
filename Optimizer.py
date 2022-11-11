@@ -12,7 +12,7 @@ def optimize(lanes: List[Lane]) -> SupplyChain:
     sc = SupplyChain("sc")
 
     # populate customers from list of lanes 
-    customers: List[Customer] = [lane.customer for lane in lanes]
+    customers: Set[Customer] = [lane.customer for lane in lanes]
 
     # sort customers by demand in descending order
     customers.sort(key=lambda x: x.demand, reverse=True)
