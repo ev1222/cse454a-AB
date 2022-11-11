@@ -27,8 +27,9 @@ def optimize(lanes: List[Lane]) -> SupplyChain:
         # TODO: edit lambda function to produce more robust sorts. For instance, it would be nice 
         # to sort by transport cost in addition to capacity, so that if two capacities are the same
         # then the lane with lower transport cost would be placed higher and thus selected first
-        context_lanes = ([lane for lane in lanes if lane.customer == customer]
-                        .sort(key=lambda x: x.supplier.capacity, reverse=True))
+        context_lanes = [lane for lane in lanes if lane.customer == customer]
+        context_lanes = sorted(context_lanes, key=get_key)
+        
         # add highest capacity supplier for that customer -- greedy!                
         for lane in context_lanes:
             sc.addLane(lane)
@@ -44,3 +45,6 @@ def optimize(lanes: List[Lane]) -> SupplyChain:
         print("Something went terribly wrong") # debugging purposes              
 
     return sc
+
+def get_key(lane):
+    return (-1*lane.supplier.capacity, lane.transport_cost)
