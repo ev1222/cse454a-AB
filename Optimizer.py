@@ -24,9 +24,6 @@ def optimize(lanes: List[Lane]) -> SupplyChain:
         demand = customer.demand
         capacity = 0
         # create list of contextual lanes sorted by their capcity in decreasing order
-        # TODO: edit lambda function to produce more robust sorts. For instance, it would be nice 
-        # to sort by transport cost in addition to capacity, so that if two capacities are the same
-        # then the lane with lower transport cost would be placed higher and thus selected first
         context_lanes = [lane for lane in lanes if lane.customer == customer]
         context_lanes = sorted(context_lanes, key=get_key)
         
