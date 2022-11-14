@@ -1,7 +1,7 @@
-Lane Name,Customer Name,Supplier Name,Transport Cost,Lane Cost
-lane3,01cv,Danville,500,206244.0
-lane1,01bv,Crete,400,83056.0
-lane2,01bv,Didion Milling,500,102858.0
+Lane Name,Product,Customer Name,Supplier Name,Transport Cost,Lane Cost
+lane3,Grits,01cv,Danville,500,206244.0
+lane1,Grits,01bv,Crete,400,83056.0
+lane2,Grits,01bv,Didion Milling,500,102858.0
 
 Total cost of supply chain:
 392158.0
