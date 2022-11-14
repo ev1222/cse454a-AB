@@ -5,6 +5,7 @@ from Supplier import Supplier
 from Lane import Lane
 from SupplyChain import SupplyChain
 from Optimizer import optimize
+from GenerateCSV import generateCSV
 
 grits = Grits()
 
@@ -23,7 +24,11 @@ lanes = [lane1, lane2, lane3]
 
 sc = optimize(lanes)
 
-if not sc.isValid():
-    print("Uh oh!")
-print("Total cost of supply chain:")
-print(f'${round(sc.grossCost(),2):,}') # print output in rounded dollar format
+if sc.isValid():
+    success, error_msg = generateCSV(sc)
+    if success:
+        print('CSV file successfully generated/updated')
+    else:
+        print(error_msg)
+else:
+    print('Supply Chain is not valid')

@@ -25,6 +25,10 @@ class SupplyChain():
         for lane in self.lanes:
             gross_cost += lane.getLaneCost()
         return gross_cost
+    
+    def getLanes(self) -> list:
+        return self.lanes
+        
 
     #TODO: add addt'l checks for other constraints
     def isValid(self) -> bool:
