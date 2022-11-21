@@ -14,13 +14,6 @@ optimize(lanes, percentage):
 	sorted_lanes = sort lanes by cheapest supplier production cost
 	sc = SupplyChain()
 
-		sorted_customer = [customer : percentage] # could use PQ
-		initial_demand = [customer: demand]
-		for each supplier:
-			for each customer:
-					percentage = customer.demand / supplier.capacity
-					map customer and percentage to sorted_customer
-		``
 	while sorted_lanes is not empty:
 		lane = lane popped from sorted_lanes		
 
