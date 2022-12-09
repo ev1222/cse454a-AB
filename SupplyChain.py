@@ -42,6 +42,6 @@ class SupplyChain():
                 if customer is lane.customer:
                     capacity += lane.supplier.capacity
             if capacity < demand:
-                print(f'{customer.name} demand is not met') # for debugging purposes
+                print(f'{customer.name} demand of {customer.product} is not met ({(int)(demand - capacity)} items short)') # for debugging purposes
                 flag = False
         return flag

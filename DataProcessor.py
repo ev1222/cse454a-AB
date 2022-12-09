@@ -21,54 +21,21 @@ from Customer import Customer
 from Supplier import Supplier
 from Lane import Lane
 
+from DE95 import DE95
+from HFCS import HFCS
+from Grits import Grits
+
+from Optimizer import optimize
+from GenerateCSV import generateCSV
+
 source_file = "NAZ CornDataBook 9.7 09 27.xlsx"
 xlsx = pd.ExcelFile(source_file)
 
-# @dataclass
-# class Product():
-#     name: str
-#     supplier_name: str
-#     cost: float
+grits = Grits()
+de95 = DE95()
+hfcs = HFCS()
+prod_list = [grits, hfcs, de95]
 
-#     def __init__(self, name, supplier_name, cost) :
-#       self.name = name
-#       self.supplier_name = supplier_name
-#       self.cost = cost
-
-# @dataclass
-# class Customer():
-#     name: str
-#     product: Product
-#     demand: float
-        
-#     def __init__(self, name, product, demand) :
-#       self.name = name
-#       self.product = product
-#       self.demand = demand
-
-# @dataclass
-# class Supplier():
-#     name: str
-#     product: Product
-#     capacity: int
-
-#     def __init__(self, name, product, capacity) :
-#       self.name = name
-#       self.product = product
-#       self.capacity = capacity
-
-# @dataclass
-# class Lane(): 
-#     customer: Customer
-#     supplier: Supplier
-#     product: Product
-#     transport_cost: float
-        
-#     def __init__(self, customer, supplier, product, transport_cost):
-#         self.customer = customer
-#         self.supplier = supplier
-#         self.product = product
-#         self.transport_cost = transport_cost
         
 def getProducts() :
     production_cost_data = pd.read_excel(xlsx, 'Production Cost')
@@ -78,8 +45,6 @@ def getProducts() :
     products = []
     for i, row in production_cost_data.iterrows() :
         products.append(Product(row["Product Name"], row["Supplier Name"], row["Production Cost (EXW)"]))
-
-    # print(products)
 
     return products
 
@@ -104,34 +69,43 @@ def getSuppliers(products) :
     suppliers = []
     for i, row in suppliers_capacity_data.iterrows() :
         curr_prod = next(
-              (prod for prod in products if prod.name == row["Product Name"] and prod.supplier_name == row["Supplier Name"]),
+              (prod for prod in prod_list if prod.name == row["Product Name"]), # and prod.supplier_name == row["Supplier Name"]),
               None
-          )
-        suppliers.append(Supplier(row["Supplier Name"], curr_prod, row["Capacity (contracted for ABI)"]))
+        )
+        
+        prod_cost = next(
+            (prod.weight for prod in products if prod.size == row["Supplier Name"]
+            and prod.name == row["Product Name"]), 
+            None
+        )
+
+        suppliers.append(Supplier(row["Supplier Name"], curr_prod, prod_cost, row["Capacity (contracted for ABI)"]))
 
     # print(suppliers) 
 
     return suppliers
 
-def getLanes(customers, suppliers, products) :
+def getLanes(customers, suppliers) :
     transportation_cost_data = pd.read_excel(xlsx, 'Transportation Cost')
     transportation_cost_data = transportation_cost_data.iloc[:, [0, 1, 2, 5]]
 
     lanes = []
     for i, row in transportation_cost_data.iterrows() :
-      curr_cust = next(
+        curr_cust = next(
               (cust for cust in customers if cust.name == row["Site To"] and cust.product == row["Product Name"]),
               None
             )
-      curr_supp = next(
+        if curr_cust == None:
+            continue
+
+        curr_supp = next(
               (supp for supp in suppliers if supp.name == row["Site From"] and supp.product.name == row["Product Name"]),
               None
             )
-      curr_prod = next(
-              (prod for prod in products if prod.name == row["Product Name"] and prod.supplier_name == row["Site From"]),
-              None
-            )
-      lanes.append(Lane(curr_cust, curr_supp, curr_prod, row["Transportation Cost"]))
+        if curr_supp == None:
+            continue
+
+        lanes.append(Lane(i, curr_cust, curr_supp, row["Transportation Cost"]))
 
     # print(lanes)
 
@@ -140,9 +114,8 @@ def getLanes(customers, suppliers, products) :
 products = getProducts()
 customers = getCustomers()
 suppliers = getSuppliers(products)
-lanes = getLanes(customers, suppliers, products)
+lanes = getLanes(customers, suppliers)
 
-print(products[0])
-print(customers[0])
-print(suppliers[0])
-print(lanes[0])
+sc = optimize(lanes)
+
+generateCSV(sc)

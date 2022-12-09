@@ -9,7 +9,7 @@ def generateCSV(sc: SupplyChain) -> tuple[bool, str]:
 
     for lane in lanes:
         lane_name = lane.name
-        lane_product_name = lane.customer.product.name
+        lane_product_name = lane.customer.product
         lane_customer = lane.customer
         lane_supplier = lane.supplier
         lane_transport_cost = lane.transport_cost

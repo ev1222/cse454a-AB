@@ -4,9 +4,25 @@ from Lane import Lane
 from SupplyChain import SupplyChain
 from typing import List, Set
 
+def checkSupplyAndDemand(lanes: List[Lane]) -> bool:
+    supply = 0
+    demand = 0
+
+    for lane in lanes:
+        supply += lane.supplier.capacity
+        demand += lane.customer.demand
+    print(demand)
+    print(supply)
+    if demand > supply:
+        return False
+    else:
+        return True
+
+
+
 def optimize(lanes: List[Lane]) -> SupplyChain:
     #check for valid input
-    if not lanes:
+    if not lanes or not checkSupplyAndDemand(lanes):
         print("Invalid input")
 
     sc = SupplyChain("sc")
@@ -39,7 +55,7 @@ def optimize(lanes: List[Lane]) -> SupplyChain:
                 break
     
     if not sc.isValid():
-        print("Something went terribly wrong") # debugging purposes              
+        print("Errors detected") # debugging purposes              
 
     return sc
 
