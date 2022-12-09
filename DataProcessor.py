@@ -12,58 +12,63 @@
 
 
 
-# from Customer import Customer
+
 import pandas as pd
 from dataclasses import dataclass
+
+from Product import Product
+from Customer import Customer
+from Supplier import Supplier
+from Lane import Lane
 
 source_file = "NAZ CornDataBook 9.7 09 27.xlsx"
 xlsx = pd.ExcelFile(source_file)
 
-@dataclass
-class Product():
-    name: str
-    supplier_name: str
-    cost: float
+# @dataclass
+# class Product():
+#     name: str
+#     supplier_name: str
+#     cost: float
 
-    def __init__(self, name, supplier_name, cost) :
-      self.name = name
-      self.supplier_name = supplier_name
-      self.cost = cost
+#     def __init__(self, name, supplier_name, cost) :
+#       self.name = name
+#       self.supplier_name = supplier_name
+#       self.cost = cost
 
-@dataclass
-class Customer():
-    name: str
-    product: Product
-    demand: float
+# @dataclass
+# class Customer():
+#     name: str
+#     product: Product
+#     demand: float
         
-    def __init__(self, name, product, demand) :
-      self.name = name
-      self.product = product
-      self.demand = demand
+#     def __init__(self, name, product, demand) :
+#       self.name = name
+#       self.product = product
+#       self.demand = demand
 
-@dataclass
-class Supplier():
-    name: str
-    product: Product
-    capacity: int
+# @dataclass
+# class Supplier():
+#     name: str
+#     product: Product
+#     capacity: int
 
-    def __init__(self, name, product, capacity) :
-      self.name = name
-      self.product = product
-      self.capacity = capacity
+#     def __init__(self, name, product, capacity) :
+#       self.name = name
+#       self.product = product
+#       self.capacity = capacity
 
-@dataclass
-class Lane(): 
-    customer: Customer
-    supplier: Supplier
-    product: Product
-    transport_cost: float
+# @dataclass
+# class Lane(): 
+#     customer: Customer
+#     supplier: Supplier
+#     product: Product
+#     transport_cost: float
         
-    def __init__(self, customer, supplier, product, transport_cost):
-        self.customer = customer
-        self.supplier = supplier
-        self.product = product
-        self.transport_cost = transport_cost
+#     def __init__(self, customer, supplier, product, transport_cost):
+#         self.customer = customer
+#         self.supplier = supplier
+#         self.product = product
+#         self.transport_cost = transport_cost
         
 def getProducts() :
     production_cost_data = pd.read_excel(xlsx, 'Production Cost')
@@ -137,4 +142,7 @@ customers = getCustomers()
 suppliers = getSuppliers(products)
 lanes = getLanes(customers, suppliers, products)
 
-print(lanes)
+print(products[0])
+print(customers[0])
+print(suppliers[0])
+print(lanes[0])
