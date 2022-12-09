@@ -1,61 +1,61 @@
 Lane Name,Product,Customer Name,Supplier Name,Transport Cost,Lane Cost
-34,Grits,01SL,Bunge - Danville,1.98,19752.576358964627
-48,Grits,01SL,Iowa Corn Processors (Contract),2.81,8090.949867283212
-22,Grits,01SL,Bunge - Crete,2.5,1515.6728626093004
-54,Grits,01SL,Iowa Corn Processors (Intermediate),2.81,7184.665535835286
-10,Grits,01SL,Bunge - Atchison,2.72,1533.2728626093003
-25,Grits,01CV,Bunge - Danville,4.94,22925.696358964626
-13,Grits,01CV,Bunge - Crete,6.84,1862.8728626093005
-1,Grits,01CV,Bunge - Atchison,7.55,1919.6728626093004
-56,DE95,01CL,Tate & Lyle - Decatur ,3.9,12247.094999333334
-29,Grits,01HT,Bunge - Danville,4.06,21982.336358964625
-45,Grits,01HT,Iowa Corn Processors (Contract),3.56,8412.535967283213
-51,Grits,01HT,Iowa Corn Processors (Intermediate),3.56,7466.035085835287
-5,Grits,01HT,Bunge - Atchison,3.5,1595.6728626093004
-17,Grits,01HT,Bunge - Crete,3.5,1595.6728626093004
-35,Grits,01WM,Bunge - Danville,6.06,24126.336358964625
-11,Grits,01WM,Bunge - Atchison,8.91,2028.4728626093004
-23,Grits,01WM,Bunge - Crete,9.05,2039.6728626093004
-28,Grits,01FC,Bunge - Danville,4.71,22679.136358964624
-44,Grits,01FC,Iowa Corn Processors (Contract),3.28,8292.477156616545
-50,Grits,01FC,Iowa Corn Processors (Intermediate),3.28,7360.990453835287
-16,Grits,01FC,Bunge - Crete,3.09,1562.8728626093005
-4,Grits,01FC,Bunge - Atchison,4.24,1654.8728626093005
-57,DE95,01JK,Tate & Lyle - Decatur ,3.44,11941.416014
-24,Grits,01BV,Bunge - Danville,4.96,22947.136358964624
-0,Grits,01BV,Bunge - Atchison,6.53,1838.0728626093005
-12,Grits,01BV,Bunge - Crete,6.95,1871.6728626093004
-31,Grits,01LA,Bunge - Danville,8.08,26291.776358964627
-47,Grits,01LA,Iowa Corn Processors (Contract),4.79,8939.937171283213
-53,Grits,01LA,Iowa Corn Processors (Intermediate),4.79,7927.481147835287
-19,Grits,01LA,Bunge - Crete,6.74,1854.8728626093005
-7,Grits,01LA,Bunge - Atchison,6.77,1857.2728626093003
-41,DE95,01BV,Ingredion - Argo,2.15,1799.893333333333
-27,Grits,01FF,Bunge - Danville,8.57,26817.056358964626
-43,Grits,01FF,Iowa Corn Processors (Contract),4.61,8862.756507283213
-49,Grits,01FF,Iowa Corn Processors (Intermediate),4.61,7859.952455835287
-3,Grits,01FF,Bunge - Atchison,6.77,1857.2728626093003
-15,Grits,01FF,Bunge - Crete,6.77,1857.2728626093003
-30,Grits,01JK,Bunge - Danville,5.84,23890.496358964625
-46,Grits,01JK,Iowa Corn Processors (Contract),5.8,9373.006452616546
-52,Grits,01JK,Iowa Corn Processors (Intermediate),5.8,8306.392141835287
-18,Grits,01JK,Bunge - Crete,7.53,1918.0728626093005
-6,Grits,01JK,Bunge - Atchison,8.15,1967.6728626093004
-26,Grits,01CL,Bunge - Danville,2.39,20192.096358964627
-2,Grits,01CL,Bunge - Atchison,4.68,1690.0728626093005
-14,Grits,01CL,Bunge - Crete,6.45,1831.6728626093004
-33,Grits,01NW,Bunge - Danville,3.29,21156.896358964626
-21,Grits,01NW,Bunge - Crete,5.39,1746.8728626093005
-9,Grits,01NW,Bunge - Atchison,6.66,1848.4728626093004
-55,DE95,01CV,Tate & Lyle - Decatur ,1.66,10758.571244666666
-59,DE95,01CV,Tate & Lyle - Loudon ,1.66,657.9912166666667
-36,DE95,01LA,Cargill - Eddyville ,5.65,872.6124880000001
-60,HFCS,01CV,Tate & Lyle - Loudon ,1.66,493.09260000000006
-32,Grits,01MM,Bunge - Danville,4.32,22261.056358964626
-20,Grits,01MM,Bunge - Crete,7.32,1901.2728626093003
-8,Grits,01MM,Bunge - Atchison,8.6,2003.6728626093004
-42,HFCS,01BV,Ingredion - Argo,5.63,1469.4533333333338
-58,HFCS,01LA,Tate & Lyle - Lafayette ,7.49,433.6440973333333
+lane9,Grits,01NW,Bunge - Atchison,6.66,1848.4728626093004
+lane8,Grits,01MM,Bunge - Atchison,8.6,2003.6728626093004
+lane7,Grits,01LA,Bunge - Atchison,6.77,1857.2728626093003
+lane60,HFCS,01CV,Tate & Lyle - Loudon ,1.66,493.09260000000006
+lane6,Grits,01JK,Bunge - Atchison,8.15,1967.6728626093004
+lane59,DE95,01CV,Tate & Lyle - Loudon ,1.66,657.9912166666667
+lane58,HFCS,01LA,Tate & Lyle - Lafayette ,7.49,433.6440973333333
+lane57,DE95,01JK,Tate & Lyle - Decatur ,3.44,11941.416014
+lane56,DE95,01CL,Tate & Lyle - Decatur ,3.9,12247.094999333334
+lane55,DE95,01CV,Tate & Lyle - Decatur ,1.66,10758.571244666666
+lane54,Grits,01SL,Iowa Corn Processors (Intermediate),2.81,7184.665535835286
+lane53,Grits,01LA,Iowa Corn Processors (Intermediate),4.79,7927.481147835287
+lane52,Grits,01JK,Iowa Corn Processors (Intermediate),5.8,8306.392141835287
+lane51,Grits,01HT,Iowa Corn Processors (Intermediate),3.56,7466.035085835287
+lane50,Grits,01FC,Iowa Corn Processors (Intermediate),3.28,7360.990453835287
+lane5,Grits,01HT,Bunge - Atchison,3.5,1595.6728626093004
+lane49,Grits,01FF,Iowa Corn Processors (Intermediate),4.61,7859.952455835287
+lane48,Grits,01SL,Iowa Corn Processors (Contract),2.81,8090.949867283212
+lane47,Grits,01LA,Iowa Corn Processors (Contract),4.79,8939.937171283213
+lane46,Grits,01JK,Iowa Corn Processors (Contract),5.8,9373.006452616546
+lane45,Grits,01HT,Iowa Corn Processors (Contract),3.56,8412.535967283213
+lane44,Grits,01FC,Iowa Corn Processors (Contract),3.28,8292.477156616545
+lane43,Grits,01FF,Iowa Corn Processors (Contract),4.61,8862.756507283213
+lane42,HFCS,01BV,Ingredion - Argo,5.63,1469.4533333333338
+lane41,DE95,01BV,Ingredion - Argo,2.15,1799.893333333333
+lane4,Grits,01FC,Bunge - Atchison,4.24,1654.8728626093005
+lane36,DE95,01LA,Cargill - Eddyville ,5.65,872.6124880000001
+lane35,Grits,01WM,Bunge - Danville,6.06,24126.336358964625
+lane34,Grits,01SL,Bunge - Danville,1.98,19752.576358964627
+lane33,Grits,01NW,Bunge - Danville,3.29,21156.896358964626
+lane32,Grits,01MM,Bunge - Danville,4.32,22261.056358964626
+lane31,Grits,01LA,Bunge - Danville,8.08,26291.776358964627
+lane30,Grits,01JK,Bunge - Danville,5.84,23890.496358964625
+lane3,Grits,01FF,Bunge - Atchison,6.77,1857.2728626093003
+lane29,Grits,01HT,Bunge - Danville,4.06,21982.336358964625
+lane28,Grits,01FC,Bunge - Danville,4.71,22679.136358964624
+lane27,Grits,01FF,Bunge - Danville,8.57,26817.056358964626
+lane26,Grits,01CL,Bunge - Danville,2.39,20192.096358964627
+lane25,Grits,01CV,Bunge - Danville,4.94,22925.696358964626
+lane24,Grits,01BV,Bunge - Danville,4.96,22947.136358964624
+lane23,Grits,01WM,Bunge - Crete,9.05,2039.6728626093004
+lane22,Grits,01SL,Bunge - Crete,2.5,1515.6728626093004
+lane21,Grits,01NW,Bunge - Crete,5.39,1746.8728626093005
+lane20,Grits,01MM,Bunge - Crete,7.32,1901.2728626093003
+lane2,Grits,01CL,Bunge - Atchison,4.68,1690.0728626093005
+lane19,Grits,01LA,Bunge - Crete,6.74,1854.8728626093005
+lane18,Grits,01JK,Bunge - Crete,7.53,1918.0728626093005
+lane17,Grits,01HT,Bunge - Crete,3.5,1595.6728626093004
+lane16,Grits,01FC,Bunge - Crete,3.09,1562.8728626093005
+lane15,Grits,01FF,Bunge - Crete,6.77,1857.2728626093003
+lane14,Grits,01CL,Bunge - Crete,6.45,1831.6728626093004
+lane13,Grits,01CV,Bunge - Crete,6.84,1862.8728626093005
+lane12,Grits,01BV,Bunge - Crete,6.95,1871.6728626093004
+lane11,Grits,01WM,Bunge - Atchison,8.91,2028.4728626093004
+lane10,Grits,01SL,Bunge - Atchison,2.72,1533.2728626093003
+lane1,Grits,01CV,Bunge - Atchison,7.55,1919.6728626093004
+lane0,Grits,01BV,Bunge - Atchison,6.53,1838.0728626093005
 
 Total cost of supply chain:
-457126.494280243
+457126.4942802431

@@ -105,12 +105,13 @@ def getLanes(customers, suppliers) :
         if curr_supp == None:
             continue
 
-        lanes.append(Lane(i, curr_cust, curr_supp, row["Transportation Cost"]))
+        lanes.append(Lane(f'lane{i}', curr_cust, curr_supp, row["Transportation Cost"]))
 
     # print(lanes)
 
     return lanes
 
+# demo
 products = getProducts()
 customers = getCustomers()
 suppliers = getSuppliers(products)
