@@ -11,8 +11,6 @@ def checkSupplyAndDemand(lanes: List[Lane]) -> bool:
     for lane in lanes:
         supply += lane.supplier.capacity
         demand += lane.customer.demand
-    print(demand)
-    print(supply)
     if demand > supply:
         return False
     else:
